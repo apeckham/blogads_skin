@@ -6,6 +6,6 @@
 
   $parent.find("#outer").prepend("<a id=\"ba_clickable_bg_left\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>\n<a id=\"ba_clickable_bg_right\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>");
 
-  $parent.find("head").append("<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + dfpMacros.imageUrl + "') fixed no-repeat center top;\n  }\n\n  #outer {\n    position: relative;\n    overflow-x: visible;\n  }\n\n  #ba_clickable_bg_left, #ba_clickable_bg_right {\n    width: 160px;\n    height: 610px;\n    display: inline-block;\n    position: absolute;\n    z-index: 2;\n  }\n\n  #ba_clickable_bg_left {\n    left: -160px;\n  }\n\n  #ba_clickable_bg_right {\n    left: 960px;\n  }\n</style>");
+  $parent.find("head").append("<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + dfpMacros.imageUrl + "') fixed no-repeat center top;\n  }\n\n  #outer {\n    position: relative;\n    overflow-x: visible;\n  }\n\n  #ba_clickable_bg_left, #ba_clickable_bg_right {\n    width: 160px;\n    height: 100%;\n    display: inline-block;\n    position: absolute;\n    z-index: 2;\n  }\n\n  #ba_clickable_bg_left {\n    left: -160px;\n  }\n\n  #ba_clickable_bg_right {\n    left: 960px;\n  }\n</style>");
 
 }).call(this);

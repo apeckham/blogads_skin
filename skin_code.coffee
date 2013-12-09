@@ -18,7 +18,7 @@ $parent.find("head").append """
 
     #ba_clickable_bg_left, #ba_clickable_bg_right {
       width: 160px;
-      height: 610px;
+      height: 100%;
       display: inline-block;
       position: absolute;
       z-index: 2;
