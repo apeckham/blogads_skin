@@ -1,13 +1,13 @@
 for container in window.parent.document.getElementsByClassName('container')
   container.innerHTML = """
-    <a class="ba_clickable_bg_left" href="#{dfpMacros.clickUrl}" target="_blank"></a>
-    <a class="ba_clickable_bg_right" href="#{dfpMacros.clickUrl}" target="_blank"></a>
+    <a class="ba_clickable_bg_left" href="#{CLICK_URL_UNESC_DEST_URL}" target="_blank"></a>
+    <a class="ba_clickable_bg_right" href="#{CLICK_URL_UNESC_DEST_URL}" target="_blank"></a>
   """ + container.innerHTML
 
 window.parent.document.head.innerHTML += """
   <style type="text/css">
     body {
-      background: #FBF500 url('#{dfpMacros.imageUrl}') fixed no-repeat center top;
+      background: #FBF500 url('#{FILE_JPG1}') fixed no-repeat center top;
     }
 
     .container {

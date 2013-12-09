@@ -5,9 +5,9 @@
   _ref = window.parent.document.getElementsByClassName('container');
   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
     container = _ref[_i];
-    container.innerHTML = ("<a class=\"ba_clickable_bg_left\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>\n<a class=\"ba_clickable_bg_right\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>") + container.innerHTML;
+    container.innerHTML = ("<a class=\"ba_clickable_bg_left\" href=\"" + CLICK_URL_UNESC_DEST_URL + "\" target=\"_blank\"></a>\n<a class=\"ba_clickable_bg_right\" href=\"" + CLICK_URL_UNESC_DEST_URL + "\" target=\"_blank\"></a>") + container.innerHTML;
   }
 
-  window.parent.document.head.innerHTML += "<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + dfpMacros.imageUrl + "') fixed no-repeat center top;\n  }\n\n  .container {\n    position: relative;\n    overflow-x: visible !important;\n  }\n\n  .ba_clickable_bg_left, .ba_clickable_bg_right {\n    position: absolute;\n    height: 100%;\n    width: 160px;\n    display: inline-block;\n    z-index: 2;\n  }\n\n  .ba_clickable_bg_left {\n    left: -160px;\n  }\n\n  .ba_clickable_bg_right {\n    left: 960px;\n  }\n</style>";
+  window.parent.document.head.innerHTML += "<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + FILE_JPG1 + "') fixed no-repeat center top;\n  }\n\n  .container {\n    position: relative;\n    overflow-x: visible !important;\n  }\n\n  .ba_clickable_bg_left, .ba_clickable_bg_right {\n    position: absolute;\n    height: 100%;\n    width: 160px;\n    display: inline-block;\n    z-index: 2;\n  }\n\n  .ba_clickable_bg_left {\n    left: -160px;\n  }\n\n  .ba_clickable_bg_right {\n    left: 960px;\n  }\n</style>";
 
 }).call(this);
