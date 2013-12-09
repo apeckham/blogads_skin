@@ -1,2 +1,1 @@
-coffee -w -c skin_code.coffee &
-python -mSimpleHTTPServer
+coffee -w -c skin_code.coffee
