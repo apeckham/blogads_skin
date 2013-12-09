@@ -1,11 +1,9 @@
-$parent = jQuery(window.parent.document)
-
-$parent.find("#outer").prepend """
+$(window.parent.document).find('#outer').prepend """
   <a id="ba_clickable_bg_left" href="#{dfpMacros.clickUrl}" target="_blank"></a>
   <a id="ba_clickable_bg_right" href="#{dfpMacros.clickUrl}" target="_blank"></a>
 """
 
-$parent.find("head").append """
+$(window.parent.document.head).append """
   <style type="text/css">
     body {
       background: #FBF500 url('#{dfpMacros.imageUrl}') fixed no-repeat center top;
