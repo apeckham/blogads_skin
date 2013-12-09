@@ -1,5 +1,6 @@
-window.ba_clickable_ad_bg = (ad_click_tracker, ad_tracer_id, left_show, right_show) ->
-  return if ad_click_tracker is ""
+window.ba_clickable_ad_bg = ->
+  ad_tracer_id = "ud_skin_test"
+  ad_click_tracker = "http://www.foxadhd.com/"
   ba_rand = Math.floor(Math.random() * 100000000)
   ba_winWidth = $parent.find("body").width()
   ba_winHeight = $parent.height()
@@ -23,7 +24,7 @@ window.ba_clickable_ad_bg = (ad_click_tracker, ad_tracer_id, left_show, right_sh
   $parent.find("#ba_clickable_bg_left").click ->
     window.open ba_tracer
 
-  if ba_leftWidth > 0 and left_show is "yes"
+  if ba_leftWidth > 0
     $parent.find("#ba_clickable_bg_left").show()
   else
     $parent.find("#ba_clickable_bg_left").hide()
@@ -45,7 +46,7 @@ window.ba_clickable_ad_bg = (ad_click_tracker, ad_tracer_id, left_show, right_sh
   $parent.find("#ba_clickable_bg_right").click ->
     window.open ba_tracer
 
-  if ba_rightWidth > 0 and right_show is "yes"
+  if ba_rightWidth > 0
     $parent.find("#ba_clickable_bg_right").show()
   else
     $parent.find("#ba_clickable_bg_right").hide()
@@ -86,10 +87,8 @@ style_for_skin = """
 
 $parent = jQuery(window.parent.document)
 $parent.find("head").append style_for_skin
-ba_ad_click_tracker = "http://www.foxadhd.com/"
-ba_ad_tracer_id = "ud_skin_test"
 
 $parent.find(document).ready ->
   $parent.find(window).resize ->
-    setTimeout "ba_clickable_ad_bg('" + ba_ad_click_tracker + "', '" + ba_ad_tracer_id + "', 'yes', 'yes')", 500
-  setTimeout "ba_clickable_ad_bg('" + ba_ad_click_tracker + "', '" + ba_ad_tracer_id + "', 'yes', 'yes')", 500
+    setTimeout "ba_clickable_ad_bg()", 500
+  setTimeout "ba_clickable_ad_bg()", 500
