@@ -5,15 +5,14 @@
   window.ba_clickable_ad_bg = function() {
     var ba_contentOffset;
     ba_contentOffset = $parent.find("#outer").offset();
-    $parent.find("body").prepend("<a class=\"ba_clickable_bg\" id=\"ba_clickable_bg_left\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>");
+    $parent.find("body").prepend("<a id=\"ba_clickable_bg_left\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>\n<a id=\"ba_clickable_bg_right\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>");
     $parent.find("#ba_clickable_bg_left").css("left", (ba_contentOffset.left - $parent.find("#ba_clickable_bg_left").width()) + "px");
-    $parent.find("body").prepend("<a class=\"ba_clickable_bg\" id=\"ba_clickable_bg_right\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>");
     return $parent.find("#ba_clickable_bg_right").css("left", (ba_contentOffset.left + $parent.find("#outer").width()) + "px");
   };
 
   $parent = jQuery(window.parent.document);
 
-  $parent.find("head").append("<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + dfpMacros.imageUrl + "') fixed no-repeat center top;\n  }\n\n  .ba_clickable_ad_bg {\n    width: 160px;\n    height: 610px;\n    display: block;\n    cursor: pointer;\n    border: none;\n    position: fixed;\n    z-index: 2;\n    top: 0px;\n  }\n</style>");
+  $parent.find("head").append("<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + dfpMacros.imageUrl + "') fixed no-repeat center top;\n  }\n\n  #ba_clickable_bg_left, #ba_clickable_bg_right {\n    width: 160px;\n    height: 610px;\n    display: block;\n    cursor: pointer;\n    border: none;\n    position: fixed;\n    z-index: 2;\n    top: 0px;\n  }\n</style>");
 
   $parent.find(document).ready(function() {
     $parent.find(window).resize(function() {
