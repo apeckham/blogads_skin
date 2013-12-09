@@ -1,0 +1,29 @@
+body {
+    background: #FBF500 url('http://skins.blogads.com/urbandictionary/130726_ADHD/skin-saturday.jpg') fixed no-repeat center top;
+}
+
+.input-append .btn {
+    z-index: 10;
+}
+
+#nav1 {
+    text-align: right;
+}
+
+.ba_top_fixed_1x1 {
+    top: 0px;
+    left: 0px;
+    width: 1px;
+    height: 1px;
+    position: fixed;
+}
+
+.ba_top_fixed_1x1 img {
+    width: 1px;
+    height: 1px;
+    border: none;
+}
+
+.big-header .right > div {
+    right: 5px !important;
+}
