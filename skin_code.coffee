@@ -4,7 +4,7 @@ for container in window.parent.document.getElementsByClassName('container')
     <a class="ba_clickable_bg_right" href="#{dfpMacros.clickUrl}" target="_blank"></a>
   """ + container.innerHTML
 
-$(window.parent.document.head).append """
+window.parent.document.head.innerHTML += """
   <style type="text/css">
     body {
       background: #FBF500 url('#{dfpMacros.imageUrl}') fixed no-repeat center top;

@@ -8,6 +8,6 @@
     container.innerHTML = ("<a class=\"ba_clickable_bg_left\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>\n<a class=\"ba_clickable_bg_right\" href=\"" + dfpMacros.clickUrl + "\" target=\"_blank\"></a>") + container.innerHTML;
   }
 
-  $(window.parent.document.head).append("<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + dfpMacros.imageUrl + "') fixed no-repeat center top;\n  }\n\n  .container {\n    position: relative;\n    overflow-x: visible !important;\n  }\n\n  .ba_clickable_bg_left, .ba_clickable_bg_right {\n    position: absolute;\n    height: 100%;\n    width: 160px;\n    display: inline-block;\n    z-index: 2;\n  }\n\n  .ba_clickable_bg_left {\n    left: -160px;\n  }\n\n  .ba_clickable_bg_right {\n    left: 960px;\n  }\n</style>");
+  window.parent.document.head.innerHTML += "<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + dfpMacros.imageUrl + "') fixed no-repeat center top;\n  }\n\n  .container {\n    position: relative;\n    overflow-x: visible !important;\n  }\n\n  .ba_clickable_bg_left, .ba_clickable_bg_right {\n    position: absolute;\n    height: 100%;\n    width: 160px;\n    display: inline-block;\n    z-index: 2;\n  }\n\n  .ba_clickable_bg_left {\n    left: -160px;\n  }\n\n  .ba_clickable_bg_right {\n    left: 960px;\n  }\n</style>";
 
 }).call(this);
