@@ -1,7 +1,8 @@
-$(window.parent.document).find('.container').prepend """
-  <a class="ba_clickable_bg_left" href="#{dfpMacros.clickUrl}" target="_blank"></a>
-  <a class="ba_clickable_bg_right" href="#{dfpMacros.clickUrl}" target="_blank"></a>
-"""
+for container in window.parent.document.getElementsByClassName('container')
+  container.innerHTML = """
+    <a class="ba_clickable_bg_left" href="#{dfpMacros.clickUrl}" target="_blank"></a>
+    <a class="ba_clickable_bg_right" href="#{dfpMacros.clickUrl}" target="_blank"></a>
+  """ + container.innerHTML
 
 $(window.parent.document.head).append """
   <style type="text/css">
