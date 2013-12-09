@@ -3,16 +3,11 @@
   var $parent;
 
   window.ba_clickable_ad_bg = function() {
-    var ad_click_tracker, ad_tracer_id, ba_contentOffset, ba_leftWidth, ba_rand, ba_rightWidth, ba_tracer, ba_winHeight, ba_winWidth;
-    ad_tracer_id = "ud_skin_test";
-    ad_click_tracker = "http://www.foxadhd.com/";
-    ba_rand = Math.floor(Math.random() * 100000000);
+    var ba_contentOffset, ba_leftWidth, ba_rightWidth, ba_winWidth;
     ba_winWidth = $parent.find("body").width();
-    ba_winHeight = $parent.height();
     ba_contentOffset = $parent.find("#outer").offset();
     ba_leftWidth = ba_contentOffset.left;
     ba_rightWidth = ba_winWidth - (ba_contentOffset.left + $parent.find("#outer").width() + parseInt($parent.find("#outer").css("padding-left")) + parseInt($parent.find("#outer").css("padding-right")));
-    ba_tracer = "http://tracer.blogads.com/click.php?zoneid=" + ad_tracer_id + "&rand=" + ba_rand + "&url=" + encodeURIComponent(ad_click_tracker);
     $parent.find("body").prepend("<div id=\"ba_clickable_bg_left\" class=\"hidden-phone\" style=\"display: none;\"><img src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"/></div>");
     $parent.find("#ba_clickable_bg_left").css("width", "160px");
     $parent.find("#ba_clickable_bg_left").css("height", "610px");
@@ -27,7 +22,7 @@
     $parent.find("#ba_clickable_bg_left").css("left", (ba_contentOffset.left - $parent.find("#ba_clickable_bg_left").width()) + "px");
     $parent.find("#ba_clickable_bg_left").unbind();
     $parent.find("#ba_clickable_bg_left").click(function() {
-      return window.open(ba_tracer);
+      return window.open(dfpMacros.clickUrl);
     });
     if (ba_leftWidth > 0) {
       $parent.find("#ba_clickable_bg_left").show();
@@ -48,7 +43,7 @@
     $parent.find("#ba_clickable_bg_right").css("left", (ba_contentOffset.left + $parent.find("#outer").width()) + "px");
     $parent.find("#ba_clickable_bg_right").unbind();
     $parent.find("#ba_clickable_bg_right").click(function() {
-      return window.open(ba_tracer);
+      return window.open(dfpMacros.clickUrl);
     });
     if (ba_rightWidth > 0) {
       return $parent.find("#ba_clickable_bg_right").show();
@@ -59,7 +54,7 @@
 
   $parent = jQuery(window.parent.document);
 
-  $parent.find("head").append("<style type=\"text/css\">\n  body {\n      background: #FBF500 url('http://skins.blogads.com/urbandictionary/130726_ADHD/skin-saturday.jpg') fixed no-repeat center top;\n  }\n\n  .input-append .btn {\n      z-index: 10;\n  }\n\n  #nav1 {\n      text-align: right;\n  }\n\n  .ba_top_fixed_1x1 {\n      top: 0px;\n      left: 0px;\n      width: 1px;\n      height: 1px;\n      position: fixed;\n  }\n\n  .ba_top_fixed_1x1 img {\n      width: 1px;\n      height: 1px;\n      border: none;\n  }\n\n  .big-header .right > div {\n      right: 5px !important;\n  }\n</style>");
+  $parent.find("head").append("<style type=\"text/css\">\n  body {\n    background: #FBF500 url('" + dfpMacros.imageUrl + "') fixed no-repeat center top;\n  }\n</style>");
 
   $parent.find(document).ready(function() {
     $parent.find(window).resize(function() {

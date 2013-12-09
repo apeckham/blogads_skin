@@ -1,11 +1,9 @@
 <script type="text/javascript">
-    document.write('<scr' + 'ipt type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></scr' + 'ipt>');
+    window.dfpMacros = {
+        clickUrl: '%%CLICK_URL_UNESC%%%%DEST_URL%%',
+        imageUrl: '%%FILE:JPG1%%'
+    };
 </script>
 
-<script type="text/javascript">
-    var skin_code_js_url = 'http://localhost:8000/skin_code.js?var=' + Math.floor(Math.random() * 100);
-    script_tag = document.createElement("script");
-    script_tag.setAttribute("src", skin_code_js_url);
-    script_tag.setAttribute("type", 'text/javascript');
-    document.getElementsByTagName('head')[0].appendChild(script_tag);
-</script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://localhost:8000/skin_code.js"></script>
