@@ -9,7 +9,9 @@ window.ba_clickable_ad_bg = ->
   ba_rightWidth = ba_winWidth - (ba_contentOffset.left + $parent.find("#outer").width() + parseInt($parent.find("#outer").css("padding-left")) + parseInt($parent.find("#outer").css("padding-right")))
   ba_tracer = "http://tracer.blogads.com/click.php?zoneid=" + ad_tracer_id + "&rand=" + ba_rand + "&url=" + encodeURIComponent(ad_click_tracker)
 
-  $parent.find("body").prepend "<div id=\"ba_clickable_bg_left\" class=\"hidden-phone\" style=\"display: none;\"><img src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"/></div>"
+  $parent.find("body").prepend """
+    <div id="ba_clickable_bg_left" class="hidden-phone" style="display: none;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div>
+  """
   $parent.find("#ba_clickable_bg_left").css "width", "160px"
   $parent.find("#ba_clickable_bg_left").css "height", "610px"
   $parent.find("#ba_clickable_bg_left img").css "width", "160px"
@@ -30,7 +32,9 @@ window.ba_clickable_ad_bg = ->
   else
     $parent.find("#ba_clickable_bg_left").hide()
 
-  $parent.find("body").prepend "<div id=\"ba_clickable_bg_right\" class=\"hidden-phone\" style=\"display: none;\"><img src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"/></div>"
+  $parent.find("body").prepend """
+    <div id="ba_clickable_bg_right" class="hidden-phone" style="display: none;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div>
+  """
   $parent.find("#ba_clickable_bg_right").css "width", "160px"
   $parent.find("#ba_clickable_bg_right").css "height", "610px"
   $parent.find("#ba_clickable_bg_right img").css "width", "160px"
@@ -51,7 +55,8 @@ window.ba_clickable_ad_bg = ->
   else
     $parent.find("#ba_clickable_bg_right").hide()
 
-style_for_skin = """
+$parent = jQuery(window.parent.document)
+$parent.find("head").append """
   <style type="text/css">
     body {
         background: #FBF500 url('http://skins.blogads.com/urbandictionary/130726_ADHD/skin-saturday.jpg') fixed no-repeat center top;
@@ -84,9 +89,6 @@ style_for_skin = """
     }
   </style>
 """
-
-$parent = jQuery(window.parent.document)
-$parent.find("head").append style_for_skin
 
 $parent.find(document).ready ->
   $parent.find(window).resize ->
