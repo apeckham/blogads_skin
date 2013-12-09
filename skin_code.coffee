@@ -15,10 +15,10 @@ $(window.parent.document.head).append """
     }
 
     .ba_clickable_bg_left, .ba_clickable_bg_right {
-      width: 160px;
-      height: 100%;
-      display: inline-block;
       position: absolute;
+      height: 100%;
+      width: 160px;
+      display: inline-block;
       z-index: 2;
     }
 
