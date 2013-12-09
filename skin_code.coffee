@@ -8,7 +8,8 @@ window.ba_clickable_ad_bg = ->
   ba_leftWidth = ba_contentOffset.left
   ba_rightWidth = ba_winWidth - (ba_contentOffset.left + $parent.find("#outer").width() + parseInt($parent.find("#outer").css("padding-left")) + parseInt($parent.find("#outer").css("padding-right")))
   ba_tracer = "http://tracer.blogads.com/click.php?zoneid=" + ad_tracer_id + "&rand=" + ba_rand + "&url=" + encodeURIComponent(ad_click_tracker)
-  $parent.find("body").prepend "<div id=\"ba_clickable_bg_left\" class=\"hidden-phone\" style=\"display: none;\"><img src=\"http://skins.blogads.com/blogads/blank.gif\"/></div>"  unless $parent.find("#ba_clickable_bg_left").width()
+
+  $parent.find("body").prepend "<div id=\"ba_clickable_bg_left\" class=\"hidden-phone\" style=\"display: none;\"><img src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"/></div>"
   $parent.find("#ba_clickable_bg_left").css "width", "160px"
   $parent.find("#ba_clickable_bg_left").css "height", "610px"
   $parent.find("#ba_clickable_bg_left img").css "width", "160px"
@@ -29,8 +30,7 @@ window.ba_clickable_ad_bg = ->
   else
     $parent.find("#ba_clickable_bg_left").hide()
 
-  #Set right div.
-  $parent.find("body").prepend "<div id=\"ba_clickable_bg_right\" class=\"hidden-phone\" style=\"display: none;\"><img src=\"http://skins.blogads.com/blogads/blank.gif\"/></div>"  unless $parent.find("#ba_clickable_bg_right").width()
+  $parent.find("body").prepend "<div id=\"ba_clickable_bg_right\" class=\"hidden-phone\" style=\"display: none;\"><img src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"/></div>"
   $parent.find("#ba_clickable_bg_right").css "width", "160px"
   $parent.find("#ba_clickable_bg_right").css "height", "610px"
   $parent.find("#ba_clickable_bg_right img").css "width", "160px"
