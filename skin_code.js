@@ -8,8 +8,8 @@
     var a;
     a = doc.createElement('a');
     a.className = className;
-    a.href = "" + CLICK_URL;
-    a.target = "" + TARGET_WINDOW;
+    a.href = CLICK_URL;
+    a.target = TARGET_WINDOW;
     return container.insertBefore(a, container.firstChild);
   };
 
