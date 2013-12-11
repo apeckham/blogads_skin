@@ -1,34 +1,48 @@
-for container in window.parent.document.getElementsByClassName('container')
-  container.innerHTML = """
-    <a class="ba_clickable_bg_left" href="#{CLICK_URL_UNESC_DEST_URL}" target="_blank"></a>
-    <a class="ba_clickable_bg_right" href="#{CLICK_URL_UNESC_DEST_URL}" target="_blank"></a>
-  """ + container.innerHTML
+doc = window.parent.document
 
-window.parent.document.head.innerHTML += """
-  <style type="text/css">
-    body {
-      background: #FBF500 url('#{FILE_JPG1}') fixed no-repeat center top;
-    }
+addClickableBg = (container, className) ->
+  a = doc.createElement 'a'
+  a.className = className
+  a.href = '#{CLICK_URL_UNESC_DEST_URL}'
+  a.target = '_blank'
+  container.insertBefore a, container.firstChild
 
-    .container {
-      position: relative;
-      overflow-x: visible !important;
-    }
+for container in doc.getElementsByClassName('container')
+  addClickableBg container, 'ba_clickable_bg_left'
+  addClickableBg container, 'ba_clickable_bg_right'
 
-    .ba_clickable_bg_left, .ba_clickable_bg_right {
-      position: absolute;
-      height: 100%;
-      width: 160px;
-      display: inline-block;
-      z-index: 2;
-    }
+addCss = (css) ->
+  style = doc.createElement 'style'
+  style.type = 'text/css'
+  if style.styleSheet
+    style.styleSheet.cssText = css
+  else
+    style.appendChild doc.createTextNode(css)
+  doc.head.appendChild style
 
-    .ba_clickable_bg_left {
-      left: -160px;
-    }
+addCss """
+  body {
+    background: #FBF500 url('#{FILE_JPG1}') fixed no-repeat center top;
+  }
 
-    .ba_clickable_bg_right {
-      left: 960px;
-    }
-  </style>
+  .container {
+    position: relative;
+    overflow-x: visible !important;
+  }
+
+  .ba_clickable_bg_left, .ba_clickable_bg_right {
+    position: absolute;
+    height: 100%;
+    width: 160px;
+    display: inline-block;
+    z-index: 2;
+  }
+
+  .ba_clickable_bg_left {
+    left: -160px;
+  }
+
+  .ba_clickable_bg_right {
+    left: 960px;
+  }
 """
