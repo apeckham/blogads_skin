@@ -3,8 +3,8 @@ doc = window.parent.document
 addClickableBg = (container, className) ->
   a = doc.createElement 'a'
   a.className = className
-  a.href = "#{CLICK_URL}"
-  a.target = "#{TARGET_WINDOW}"
+  a.href = CLICK_URL
+  a.target = TARGET_WINDOW
   container.insertBefore a, container.firstChild
 
 for container in doc.getElementsByClassName('container')
