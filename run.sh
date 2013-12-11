@@ -1,1 +1,1 @@
-coffee -w -c skin_code.coffee
+coffee --watch --compile *.coffee
