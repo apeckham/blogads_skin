@@ -8,7 +8,7 @@
     var a;
     a = doc.createElement('a');
     a.className = className;
-    a.href = '#{CLICK_URL_UNESC_DEST_URL}';
+    a.href = '#{CLICK_URL}';
     a.target = '_blank';
     return container.insertBefore(a, container.firstChild);
   };
