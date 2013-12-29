@@ -8,8 +8,8 @@
     var a;
     a = doc.createElement('a');
     a.className = className;
-    a.href = CLICK_URL;
-    a.target = TARGET_WINDOW;
+    a.href = MACROS.click_url;
+    a.target = MACROS.target_window;
     return container.insertBefore(a, container.firstChild);
   };
 
@@ -32,6 +32,6 @@
     return doc.head.appendChild(style);
   };
 
-  addCss("body {\n  background: #FBF500 url('" + FILE_JPG1 + "') fixed no-repeat center top;\n}\n\n.container {\n  position: relative;\n  overflow-x: visible !important;\n}\n\n.ba_clickable_bg_left, .ba_clickable_bg_right {\n  position: absolute;\n  height: 100%;\n  width: 160px;\n  display: inline-block;\n  z-index: 2;\n}\n\n.ba_clickable_bg_left {\n  left: -160px;\n}\n\n.ba_clickable_bg_right {\n  left: 960px;\n}");
+  addCss("body {\n  background: " + MACROS.background_color + " url('" + MACROS.file_jpg1 + "') fixed no-repeat center top;\n}\n\n.container {\n  position: relative;\n  overflow-x: visible !important;\n}\n\n.ba_clickable_bg_left, .ba_clickable_bg_right {\n  position: absolute;\n  height: 100%;\n  width: 160px;\n  display: inline-block;\n  z-index: 2;\n}\n\n.ba_clickable_bg_left {\n  left: -160px;\n}\n\n.ba_clickable_bg_right {\n  left: 960px;\n}");
 
 }).call(this);

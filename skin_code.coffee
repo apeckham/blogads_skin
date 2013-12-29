@@ -3,8 +3,8 @@ doc = window.parent.document
 addClickableBg = (container, className) ->
   a = doc.createElement 'a'
   a.className = className
-  a.href = CLICK_URL
-  a.target = TARGET_WINDOW
+  a.href = MACROS.click_url
+  a.target = MACROS.target_window
   container.insertBefore a, container.firstChild
 
 for container in doc.getElementsByClassName('container')
@@ -22,7 +22,7 @@ addCss = (css) ->
 
 addCss """
   body {
-    background: #FBF500 url('#{FILE_JPG1}') fixed no-repeat center top;
+    background: #{MACROS.background_color} url('#{MACROS.file_jpg1}') fixed no-repeat center top;
   }
 
   .container {
