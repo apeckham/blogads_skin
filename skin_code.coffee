@@ -11,7 +11,9 @@ addClickableBg = (container, className) ->
   a.className = className
   a.href = MACROS.click_url
   a.target = MACROS.target_window
-  a.onclick = trackClickableBg doc.getElementById('outer')
+  a.onclick = -> 
+    trackClickableBg doc.getElementById('outer')
+    return
   container.insertBefore a, container.firstChild
 
 for container in doc.getElementsByClassName('container')

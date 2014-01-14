@@ -18,7 +18,9 @@
     a.className = className;
     a.href = MACROS.click_url;
     a.target = MACROS.target_window;
-    a.onclick = trackClickableBg(doc.getElementById('outer'));
+    a.onclick = function() {
+      trackClickableBg(doc.getElementById('outer'));
+    };
     return container.insertBefore(a, container.firstChild);
   };
 
