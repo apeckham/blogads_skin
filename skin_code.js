@@ -41,7 +41,7 @@
     return doc.head.appendChild(style);
   };
 
-  addCss("body {background: \" + MACROS.background_color + \" url('\" + MACROS.file_skin + \"') fixed no-repeat center top;}\n#logo {background: transparent url('\" + MACROS.file_masthead + \"') no-repeat center top !important; height: 93px !important; width: 322px !important; margin: 0 10px 1px 10px !important;}\n.container {position: relative; overflow-x: visible !important;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {position: absolute; height: 100%; width: 160px; display: inline-block; z-index: 2;}\n.ba_clickable_bg_left {left: -160px;}\n.ba_clickable_bg_right {left: 960px;}");
+  addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#logo {background: transparent url('" + MACROS.file_masthead + "') no-repeat center top !important; height: 93px !important; width: 322px !important; margin: 0 10px 1px 10px !important;}\n.container {position: relative; overflow-x: visible !important;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {position: absolute; height: 100%; width: 160px; display: inline-block; z-index: 2;}\n.ba_clickable_bg_left {left: -160px;}\n.ba_clickable_bg_right {left: 960px;}");
 
   if (typeof MACROS.impression_tracker_skin !== 'undefined' && MACROS.impression_tracker_skin !== '') {
     document.write('<img id="ba_impression_tracker_skin" src="' + MACROS.impression_tracker_skin + '" style="top: 0px; left: 0px; width: 1px; height: 1px; border: none; position: absolute;"/>');

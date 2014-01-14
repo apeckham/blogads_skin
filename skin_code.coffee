@@ -28,8 +28,8 @@ addCss = (css) ->
   doc.head.appendChild style
 
 addCss """
-body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}
-#logo {background: transparent url('" + MACROS.file_masthead + "') no-repeat center top !important; height: 93px !important; width: 322px !important; margin: 0 10px 1px 10px !important;}
+body {background: #{MACROS.background_color} url('#{MACROS.file_skin}') fixed no-repeat center top;}
+#logo {background: transparent url('#{MACROS.file_masthead}') no-repeat center top !important; height: 93px !important; width: 322px !important; margin: 0 10px 1px 10px !important;}
 .container {position: relative; overflow-x: visible !important;}
 .ba_clickable_bg_left, .ba_clickable_bg_right {position: absolute; height: 100%; width: 160px; display: inline-block; z-index: 2;}
 .ba_clickable_bg_left {left: -160px;}
