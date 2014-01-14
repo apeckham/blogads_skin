@@ -54,7 +54,7 @@
   }
 
   if (typeof MACROS.tracer_id !== 'undefined' && MACROS.tracer_id !== '') {
-    document.write('<img id="ba_impression_tracker_for_blogads" src="http://tracer.blogads.com/click.php?zoneid=' + MACROS.tracer_id + '_impressions_skin&rand=%%CACHEBUSTER%%" style="top: 0px; left: 0px; width: 1px; height: 1px; border: none; position: absolute;"/>');
+    document.write('<img id="ba_impression_tracker_for_blogads" src="http://tracer.blogads.com/click.php?zoneid=' + MACROS.tracer_id + '_impressions_skin&rand=' + Math.floor(Math.random() * 99999999999) + '" style="top: 0px; left: 0px; width: 1px; height: 1px; border: none; position: absolute;"/>');
   }
 
 }).call(this);
