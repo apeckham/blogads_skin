@@ -1,5 +1,3 @@
 The master file is skin_code.coffee, and run.sh shows how that gets converted to JS.
 
 The DFP creative has a script tag with src http://apeckham.github.io/blogads_skin/skin_code.js
-
-#
