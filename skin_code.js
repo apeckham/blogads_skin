@@ -1,5 +1,5 @@
 (function() {
-    var addClickableBg, addCss, container, doc, trackClickableBg, _i, _len, _ref, gutter_space;
+    var addClickableBg, addCss, doc, trackClickableBg, gutter_space;
 
     doc = window.parent.document;
     gutter_space = ((parseInt(window.innerWidth) - 1280) / 2);
@@ -24,12 +24,8 @@
         return document.body.appendChild(a);
     };
 
-    _ref = doc.getElementsByClassName('container');
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        container = _ref[_i];
-        addClickableBg('ba_clickable_bg_left');
-        addClickableBg('ba_clickable_bg_right');
-    }
+    addClickableBg('ba_clickable_bg_left');
+    addClickableBg('ba_clickable_bg_right');
 
     addCss = function(css) {
         var style;
