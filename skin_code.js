@@ -1,33 +1,34 @@
 (function() {
-    var addClickableBg, addCss, container, doc, trackClickableBg, _i, _len, _ref;
+    var addClickableBg, addCss, container, doc, trackClickableBg, _i, _len, _ref, gutter_space;
 
     doc = window.parent.document;
+    gutter_space = ((parseInt(window.innerWidth) - 1280) / 2);
 
-    trackClickableBg = function(container) {
+    trackClickableBg = function() {
         var img;
         img = doc.createElement('img');
         img.src = 'http://tracer.blogads.com/click.php?zoneid=' + MACROS.tracer_id + '_click_on_skin&rand=' + Math.floor(Math.random() * 99999999);
         img.style.cssText = 'width: 1px; height: 1px; top: 0px; left: 0px; position: absolute; border: none;';
-        return container.insertBefore(img, container.firstChild);
+        return document.body.appendChild(img);
     };
 
-    addClickableBg = function(container, className) {
+    addClickableBg = function(className) {
         var a;
         a = doc.createElement('a');
         a.className = className;
         a.href = MACROS.click_url;
         a.target = MACROS.target_window;
         a.onclick = function() {
-            trackClickableBg(doc.getElementById('outer'));
+            trackClickableBg();
         };
-        return container.insertBefore(a, container.firstChild);
+        return document.body.appendChild(a);
     };
 
     _ref = doc.getElementsByClassName('container');
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         container = _ref[_i];
-        addClickableBg(container, 'ba_clickable_bg_left');
-        addClickableBg(container, 'ba_clickable_bg_right');
+        addClickableBg('ba_clickable_bg_left');
+        addClickableBg('ba_clickable_bg_right');
     }
 
     addCss = function(css) {
@@ -43,11 +44,11 @@
     };
 
     if (typeof MACROS.file_masthead !== "undefined" && MACROS.file_masthead == "") {
-        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {position: absolute; height: 100%; width: 160px; display: inline-block; z-index: 2;}\n.ba_clickable_bg_left {left: -160px;}\n.ba_clickable_bg_right {left: 960px;}");
+        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 100%; position: fixed; background: transparent;}\n.ba_clickable_bg_left {left: " + gutter_space + "px;}\n.ba_clickable_bg_right {right: " + gutter_space + "px;}");
     }
 
     else {
-        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {position: absolute; height: 100%; width: 160px; display: inline-block; z-index: 2;}\n.ba_clickable_bg_left {left: -160px;}\n.ba_clickable_bg_right {left: 960px;}");
+        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 100%; position: fixed; background: transparent;}\n.ba_clickable_bg_left {left: " + gutter_space + "px;}\n.ba_clickable_bg_right {right: " + gutter_space + "px;}");
     }
 
     if (typeof MACROS.impression_tracker_skin !== 'undefined' && MACROS.impression_tracker_skin !== '') {
