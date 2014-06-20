@@ -2,10 +2,8 @@
     var addClickableBg, addCss, doc, trackClickableBg, gutter_space;
 
     doc = window.parent.document;
-    gutter_space = ((window.innerWidth - 1280) / 2);
+    gutter_space = ((parent.innerWidth - 1280) / 2);
     
-    console.log(window.innerWidth);
-
     trackClickableBg = function() {
         var img;
         img = doc.createElement('img');
