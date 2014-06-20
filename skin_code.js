@@ -3,7 +3,7 @@
 
     doc = window.parent.document;
     gutter_space = ((parent.innerWidth - 1310) / 2);
-    
+
     trackClickableBg = function() {
         var img;
         img = doc.createElement('img');
@@ -14,14 +14,30 @@
 
     addClickableBg = function(className) {
         var a;
+        var e = doc.getElementById(className);
+
+        if (e) {
+            e.parentNode.removeChild(e);
+        }
+
         a = doc.createElement('a');
+        a.id = className;
         a.className = className;
         a.href = MACROS.click_url;
         a.target = MACROS.target_window;
+
+        if (className == "ba_clickable_bg_left") {
+            a.style.left = gutter_space + "px";
+        }
+
+        else if (className == "ba_clickable_bg_right") {
+            a.style.right = gutter_space + "px";
+        }
+
         a.onclick = function() {
             trackClickableBg();
         };
-        
+
         return doc.body.appendChild(a);
     };
 
@@ -41,11 +57,11 @@
     };
 
     if (typeof MACROS.file_masthead !== "undefined" && MACROS.file_masthead == "") {
-        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 100%; position: fixed; background: transparent;}\n.ba_clickable_bg_left {left: " + gutter_space + "px;}\n.ba_clickable_bg_right {right: " + gutter_space + "px;}");
+        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 100%; position: fixed; background: transparent;}");
     }
 
     else {
-        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 100%; position: fixed; background: transparent;}\n.ba_clickable_bg_left {left: " + gutter_space + "px;}\n.ba_clickable_bg_right {right: " + gutter_space + "px;}");
+        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 100%; position: fixed; background: transparent;}");
     }
 
     if (typeof MACROS.impression_tracker_skin !== 'undefined' && MACROS.impression_tracker_skin !== '') {
@@ -59,5 +75,10 @@
     if (typeof MACROS.tracer_id !== 'undefined' && MACROS.tracer_id !== '') {
         document.write('<img id="ba_impression_tracker_for_blogads" src="http://tracer.blogads.com/click.php?zoneid=' + MACROS.tracer_id + '_impressions_skin&rand=' + Math.floor(Math.random() * 99999999999) + '" style="top: 0px; left: 0px; width: 1px; height: 1px; border: none; position: absolute;"/>');
     }
+
+    parent.onresize = function(event) {
+        addClickableBg('ba_clickable_bg_left');
+        addClickableBg('ba_clickable_bg_right');
+    };
 
 }).call(this);
