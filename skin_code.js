@@ -77,8 +77,8 @@
     }
 
     parent.onresize = function(event) {
-        setTimeout("addClickableBg('ba_clickable_bg_left')", 500);
-        setTimeout("addClickableBg('ba_clickable_bg_right')", 500);
+        addClickableBg('ba_clickable_bg_left');
+        addClickableBg('ba_clickable_bg_right');
     };
 
 }).call(this);
