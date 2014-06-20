@@ -1,9 +1,8 @@
 (function() {
-    var addClickableBg, addCss, doc, trackClickableBg, gutter_space;
+    var addClickableBg, addCss, doc, trackClickableBg;
 
     doc = window.parent.document;
-    gutter_space = ((parent.innerWidth - 1310) / 2);
-
+    
     trackClickableBg = function() {
         var img;
         img = doc.createElement('img');
@@ -15,6 +14,7 @@
     addClickableBg = function(className) {
         var a;
         var e = doc.getElementById(className);
+        var gutter_space = ((parent.innerWidth - 1310) / 2);
 
         if (e) {
             e.parentNode.removeChild(e);
