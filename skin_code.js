@@ -2,6 +2,7 @@
     var addClickableBg, addCss, container, doc, trackClickableBg, _i, _len, _ref;
 
     doc = window.parent.document;
+    var gutter_width = parseInt(document.getElementById('outer').offsetWidth) / 2;
 
     trackClickableBg = function(container) {
         var img;
@@ -43,11 +44,11 @@
     };
 
     if (typeof MACROS.file_masthead !== "undefined" && MACROS.file_masthead == "") {
-        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {position: absolute; height: 100%; width: 160px; display: inline-block; z-index: 2;}\n.ba_clickable_bg_left {left: -160px;}\n.ba_clickable_bg_right {left: 960px;}");
+        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; height: 100%; width: " + gutter_width + "px; z-index: 2; position: fixed;}\n.ba_clickable_bg_left {left: 0px;}\n.ba_clickable_bg_right {right: 0px;}");
     }
 
     else {
-        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {position: absolute; height: 100%; width: 160px; display: inline-block; z-index: 2;}\n.ba_clickable_bg_left {left: -160px;}\n.ba_clickable_bg_right {left: 960px;}");
+        addCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') fixed no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n..ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; height: 100%; width: " + gutter_width + "px; z-index: 2; position: fixed;}\n.ba_clickable_bg_left {left: 0px;}\n.ba_clickable_bg_right {right: 0px;}");
     }
 
     if (typeof MACROS.impression_tracker_skin !== 'undefined' && MACROS.impression_tracker_skin !== '') {
