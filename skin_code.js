@@ -21,6 +21,8 @@
         a.onclick = function() {
             trackClickableBg();
         };
+        
+        console.log(a);
         return document.body.appendChild(a);
     };
 
