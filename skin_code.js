@@ -2,7 +2,7 @@
     var addClickableBg, addCss, doc, trackClickableBg;
 
     doc = window.parent.document;
-    
+
     trackClickableBg = function() {
         var img;
         img = doc.createElement('img');
@@ -77,8 +77,8 @@
     }
 
     parent.onresize = function(event) {
-        addClickableBg('ba_clickable_bg_left');
-        addClickableBg('ba_clickable_bg_right');
+        setTimeout("addClickableBg('ba_clickable_bg_left')", 500);
+        setTimeout("addClickableBg('ba_clickable_bg_right')", 500);
     };
 
 }).call(this);
