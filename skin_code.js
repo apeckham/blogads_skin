@@ -2,14 +2,14 @@
     var addClickableBg, addCss, doc, trackClickableBg, gutter_space;
 
     doc = window.parent.document;
-    gutter_space = ((parent.innerWidth - 1280) / 2);
+    gutter_space = ((parent.innerWidth - 1310) / 2);
     
     trackClickableBg = function() {
         var img;
         img = doc.createElement('img');
         img.src = 'http://tracer.blogads.com/click.php?zoneid=' + MACROS.tracer_id + '_click_on_skin&rand=' + Math.floor(Math.random() * 99999999);
         img.style.cssText = 'width: 1px; height: 1px; top: 0px; left: 0px; position: absolute; border: none;';
-        return document.body.appendChild(img);
+        return doc.body.appendChild(img);
     };
 
     addClickableBg = function(className) {
@@ -22,7 +22,7 @@
             trackClickableBg();
         };
         
-        return document.body.appendChild(a);
+        return doc.body.appendChild(a);
     };
 
     addClickableBg('ba_clickable_bg_left');
