@@ -3,7 +3,8 @@
 
     doc = window.parent.document;
 
-    function baCreateCookie(name, value, days) {
+    //FUNCTIONS
+    baCreateCookie = function(name, value, days) {
         if (days) {
             var date = new Date();
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -12,9 +13,9 @@
         else
             var expires = "";
         document.cookie = name + "=" + value + expires + "; path=/; domain=" + location.hostname;
-    }
+    };
 
-    function baReadCookie(name) {
+    baReadCookie = function(name) {
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
         for (var i = 0; i < ca.length; i++) {
@@ -25,11 +26,11 @@
                 return c.substring(nameEQ.length, c.length);
         }
         return null;
-    }
+    };
 
-    function baEraseCookie(name) {
+    baEraseCookie = function(name) {
         createCookie(name, location.hostname, "", -367);
-    }
+    };
 
     baTracking = function(id) {
         var img;
@@ -74,9 +75,6 @@
         return doc.body.appendChild(a);
     };
 
-    baAddClickableBg('ba_clickable_bg_left');
-    baAddClickableBg('ba_clickable_bg_right');
-
     baAddCss = function(css) {
         var style;
         style = doc.createElement('style');
@@ -89,14 +87,6 @@
         return doc.head.appendChild(style);
     };
 
-    if (typeof MACROS.file_masthead !== "undefined" && MACROS.file_masthead == "") {
-        baAddCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') scroll no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 467px; position: absolute; background: transparent;}");
-    }
-
-    else {
-        baAddCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') scroll no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 467px; position: absolute; background: transparent;}");
-    }
-
     baInitSh = function() {
         var cookie_name = '140708_ud_bad_words';
         var html = '';
@@ -104,6 +94,9 @@
         var first = doc.body.children[0];
         var mute = '';
         var autoplay = '';
+
+        if (doc.getElementById(div_id))
+            return;
 
         var div = doc.createElement("div");
         div.id = div_id;
@@ -141,8 +134,16 @@
 
         doc.getElementById(div_id).innerHTML = html;
     };
+    // /FUNCTIONS
 
-    baInitSh();
+    //ACTIONS
+    if (typeof MACROS.file_masthead !== "undefined" && MACROS.file_masthead == "") {
+        baAddCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') scroll no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 445px; position: absolute; background: transparent;}");
+    }
+
+    else {
+        baAddCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') scroll no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 445px; position: absolute; background: transparent;}");
+    }
 
     if (typeof MACROS.impression_tracker_skin !== 'undefined' && MACROS.impression_tracker_skin !== '') {
         document.write('<img id="ba_impression_tracker_skin" src="' + MACROS.impression_tracker_skin + '" style="top: 0px; left: 0px; width: 1px; height: 1px; border: none; position: absolute;"/>');
@@ -156,9 +157,13 @@
         document.write('<img id="ba_impression_tracker_for_blogads" src="http://tracer.blogads.com/click.php?zoneid=' + MACROS.tracer_id + '_impressions&rand=' + Math.floor(Math.random() * 99999999999) + '" style="top: 0px; left: 0px; width: 1px; height: 1px; border: none; position: absolute;"/>');
     }
 
+    baAddClickableBg('ba_clickable_bg_left');
+    baAddClickableBg('ba_clickable_bg_right');
+    baInitSh();
+
     parent.onresize = function(event) {
         baAddClickableBg('ba_clickable_bg_left');
         baAddClickableBg('ba_clickable_bg_right');
     };
-
+    // /ACTIONS
 }).call(this);
