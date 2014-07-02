@@ -98,6 +98,7 @@
         if (doc.getElementById(div_id))
             return;
 
+        $('#dark-top')[0].removeChild($('#dark-top .dfp')[0]);
         var div = doc.createElement("div");
         div.id = div_id;
         div.style.width = "960px";
