@@ -119,7 +119,7 @@
             autoplay = 'no';
         }
 
-        var flashvars = 'video_url=' + MACROS.video_url + '&first_frame=' + MACROS.video_thumb + '&mute=' + mute + '&autoplay=' + autoplay + '&click_url=' + MACROS.click_url + '&tracer_id=' + MACROS.tracer_id + '&video_version=1';
+        var flashvars = 'video_url=' + MACROS.video_url + '&first_frame=' + MACROS.video_thumb + '&mute=' + mute + '&autoplay=' + autoplay + '&click_url=' + encodeURIComponent(MACROS.click_url) + '&tracer_id=' + MACROS.tracer_id + '&video_version=1';
 
         html += '<div id="ba_sh_client_btn" style="top: 0px; left: 0px; width: 404px; height: 260px; background: transparent; position: absolute;"><a href="http://tracer.blogads.com/click.php?zoneid=' + MACROS.tracer_id + '_click_on_client_btn&rand=' + Math.floor(Math.random() * 99999999) + '&url=' + encodeURIComponent(MACROS.click_url) + '" target="' + MACROS.target_window + '"><img src="' + MACROS.blank_gif + '" style="width: 100%; height: 100%; border: none;" /></a></div>';
         html += '<div id="ba_sh_player" style="top: 1px; right: 51px; width: 456px; height: 258px; padding: 0; margin: 0; position: absolute; border: #ffc410 2px solid;">';
