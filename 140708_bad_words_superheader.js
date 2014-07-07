@@ -139,11 +139,11 @@
 
     //ACTIONS
     if (typeof MACROS.file_masthead !== "undefined" && MACROS.file_masthead == "") {
-        baAddCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') scroll no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 445px; position: absolute; background: transparent;}\n#content .dfp{width: 1px; height: 1px;}");
+        baAddCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') scroll no-repeat center top;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 445px; position: absolute; background: transparent;}\n#content .dfp{display: none;}");
     }
 
     else {
-        baAddCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') scroll no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 445px; position: absolute; background: transparent;\n#content .dfp{width: 1px; height: 1px;}}");
+        baAddCss("body {background: " + MACROS.background_color + " url('" + MACROS.file_skin + "') scroll no-repeat center top;}\n#logo {background-image: none !important;}\n.container{background: transparent url('" + MACROS.file_masthead + "') no-repeat scroll left top !important;position: relative; overflow-x: visible !important;}\n#dark-top {width: 960px;margin: 0 auto;}\n.container {background-color: #4e7ca0;}\n.ba_clickable_bg_left, .ba_clickable_bg_right {top: 0px; width: 160px; height: 445px; position: absolute; background: transparent;\n#content .dfp{display: none;}}");
     }
 
     if (typeof MACROS.impression_tracker_skin !== 'undefined' && MACROS.impression_tracker_skin !== '') {
