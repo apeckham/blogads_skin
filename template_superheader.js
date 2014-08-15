@@ -118,7 +118,7 @@
             autoplay = 'no';
         }
 
-        var flashvars = 'video_url=' + MACROS_SH.video_url + '&first_frame=' + MACROS_SH.video_thumb + '&mute=' + mute + '&autoplay=' + autoplay + '&click_url=' + MACROS_SH.click_url + '&tracer_id=' + MACROS_SH.tracer_id + '&video_version=1';
+        var flashvars = 'video_url=' + MACROS_SH.video_url + '&first_frame=' + MACROS_SH.video_thumb + '&mute=' + mute + '&autoplay=' + autoplay + '&click_url=' + encodeURIComponent(MACROS_SH.click_url) + '&tracer_id=' + MACROS_SH.tracer_id + '&video_version=1';
 
         html += '<div id="ba_sh_client_btn" style="top: 0px; left: 0px; width: 960px; height: 260px; background: transparent; position: absolute;"><a href="http://tracer.blogads.com/click.php?zoneid=' + MACROS_SH.tracer_id + '_click_on_client_btn&rand=' + Math.floor(Math.random() * 99999999) + '&url=' + encodeURIComponent(MACROS_SH.click_url) + '" target="' + MACROS_SH.target_window + '"><img src="' + MACROS_SH.blank_gif + '" style="width: 100%; height: 100%; border: none;" /></a></div>';
         html += '<div id="ba_sh_player" style="top: ' + MACROS_SH.video_top_pos + 'px; right: ' + MACROS_SH.video_right_pos + 'px; width: ' + MACROS_SH.video_width + 'px; height: ' + MACROS_SH.video_height + 'px; padding: 0; margin: 0; position: absolute;">';
