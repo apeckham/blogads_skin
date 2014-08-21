@@ -144,7 +144,9 @@
     // /FUNCTIONS
 
     //ACTIONS
-    setTimeout(baAnchorInit, 500);
+    baWin.onload = function() {
+        setTimeout(baAnchorInit, 500);
+    };
 
     baWin.addEventListener("orientationchange", function() {
         setTimeout(baAnchorSetSizes, 500);
